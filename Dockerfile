@@ -12,6 +12,8 @@ RUN	git clone https://github.com/Divyansh747/JenkinsKuberenetsTask3.git  /var/ww
 
 CMD	sudo /usr/sbin/httpd  -DFOREGROUND
 
-EXPOSE	8080
+RUN	echo "ServerName localhost" >> /etc/httpd/conf/httpd.conf
+
+EXPOSE	8082
 EXPOSE	80
 
