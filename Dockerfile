@@ -6,17 +6,12 @@ RUN	yum install net-tools -y
 
 RUN	yum install httpd -y
 
-RUN	yum install systemd -y
-
 RUN	yum install git -y
 
-RUN	sudo mkdir /git
+RUN	git clone https://github.com/Divyansh747/JenkinsKuberenetsTask3.git  /var/www/html/
 
-RUN	cd /git
+CMD	sudo /usr/sbin/httpd  -DFOREGROUND
 
-RUN	git clone https://github.com/Divyansh747/JenkinsKuberenetsTask3.git
-
-RUN	cp -f index.html /var/www/html/
-
-RUN	/usr/sbin/httpd $OPTIONS -DFOREGROUND
+EXPOSE	8080
+EXPOSE	80
 
